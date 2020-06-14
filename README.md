@@ -30,6 +30,6 @@
    <br>
    <br>
    Office hours are a great time to ask questions about the problem sets, labs, or anything else related to the class. You can also just    stop by to say hi or talk about something cool you saw related to class. 
-   
+   <br>
    Jacob's office hours are TBD.
    
