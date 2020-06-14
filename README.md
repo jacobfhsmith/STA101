@@ -22,9 +22,10 @@
    <br>
    <b> Teaching Team</b>
    <br>
-   <a href="https://jacobfhsmith.github.io/mypage/">Jacob:</a> I am starting as an Assistant Research Professor in the Stats Department    as of July 1st. Previously I was a Lecturing Fellow in the Thompson Writing Program here at Duke and before that completed a Ph.D. in    Political Science at UNC-Chapel Hill. I enjoy using data and statistics to answer research questions on topics ranging from              the electoral effect of Cherie Berry's elevator pictures to what it's like to be in the minority party in Congress. I really enjoy      mentoring undergraduate student research projects that use data to answer research questions.
+   <a href="https://jacobfhsmith.github.io/mypage/">Jacob:</a> I am starting as an Assistant Research Professor in the Stats Department    as of July 1st. Previously I was a Lecturing Fellow in the Thompson Writing Program here at Duke and before that completed a Ph.D. in    Political Science at UNC-Chapel Hill. I enjoy using data and statistics to answer research questions on topics ranging from              the electoral effect of <a href="https://journals.sagepub.com/doi/abs/10.1177/1532673X15602755">Cherie Berry's elevator pictures</a>    to what it's like to be in the <a href="https://www.bibliovault.org/BV.book.epl?ISBN=9780472054763"> minority party in Congress</a>. I    really enjoy mentoring undergraduate student research projects that use data to answer research questions.
    <br>
    <b>Office Hours</b>
+   <br>
    <br>
    Office hours are a great time to ask questions about the problem sets, labs, or anything else related to the class. You can also just    stop by to say hi or talk about something cool you saw related to class. 
    
