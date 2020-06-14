@@ -16,13 +16,16 @@
    <b> Coming Due This Week</b> <br>
    Watch this space for a list of assignments coming due this week. Please also check the syllabus to see what's coming up soon.
    <br>
+   <br>
    <b> Class Meetings </b>
+   <br>
    <br>
    <b> Teaching Team</b>
    <br>
    <a href="https://jacobfhsmith.github.io/mypage/">Jacob:</a> I am starting as an Assistant Research Professor in the Stats Department    as of July 1st. Previously I was a Lecturing Fellow in the Thompson Writing Program here at Duke and before that completed a Ph.D. in    Political Science at UNC-Chapel Hill. I enjoy using data and statistics to answer research questions on topics ranging from              the electoral effect of Cherie Berry's elevator pictures to what it's like to be in the minority party in Congress. I really enjoy      mentoring undergraduate student research projects that use data to answer research questions.
    <br>
    <b>Office Hours</b>
+   <br>
    Office hours are a great time to ask questions about the problem sets, labs, or anything else related to the class. You can also just    stop by to say hi or talk about something cool you saw related to class. 
    
    Jacob's office hours are TBD.
