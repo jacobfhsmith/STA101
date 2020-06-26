@@ -22,9 +22,11 @@ The first lab will be due on Wednesday July 1 and the first problem set will be 
    <br><br>
    Daniel:I am an incoming second year Master student in Statistical Department. My current research is about Bayesian Dynamic Models with professor Mike West. In terms of     hobbies, I am a basketball fan and I am very glad NBA is about to restart in August, hopefully.
    <br> <br>
-   Meredith: I am a rising junior at Duke majoring in Computer Science and Statistics with a Math minor. I'm from Raleigh, North Carolina, where I grew up an avid UNC basketball fan - it's been quite the adjustment. My research interests focus on the intersection of public health and data science, such as how social determinants of health can aid in predicting hospital admissions or, more recently, how the COVID-19 pandemic impacts healthcare utilization at Duke. In my free time, you can find me playing soccer, doing the NYT crossword, or tenting for Duke basketball (told you I adjusted)."
+   Meredith: I am a rising junior at Duke majoring in Computer Science and Statistics with a Math minor. I'm from Raleigh, North Carolina, where I grew up an avid UNC basketball fan - it's been quite the adjustment. My research interests focus on the intersection of public health and data science, such as how social determinants of health can aid in predicting hospital admissions or, more recently, how the COVID-19 pandemic impacts healthcare utilization at Duke. In my free time, you can find me playing soccer, doing the NYT crossword, or tenting for Duke basketball (told you I adjusted)." <br><br>
    <b>Office Hours</b> <br>
    Office hours are a great time to ask questions about the problem sets, labs, or anything else related to the class. You can also just stop by to say hi or talk about something cool you saw related to class. 
    <br><br>
-   Jacob's office hours are TBD.
+   Jacob's tentative office hours are M 4:30-5:30 PM, W 2-4 PM, Thursday 11AM-12 PM. <br>
+   Daniel's tentative office hours are M 6-7PM, TH 7-8:30 PM, F 6-7:30 PM <br>
+   Meredith's tentative office hours are T 2-4 PM, W 10-12 AM
    
