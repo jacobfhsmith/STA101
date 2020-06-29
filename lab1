@@ -1,0 +1,73 @@
+---
+title: "Lab 1 - Rubric"
+output: 
+  html_document:
+    highlight: pygments
+    theme: cerulean
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# OVERALL
+
+Total Points: 40 points
+
+- Ex 1: 4 points 
+
+- Ex 2: 5 points
+
+- Ex 3: 6 points
+
+- Ex 4: 5 points
+
+- Ex 5: 10 points
+
+- Ex 6: 10 points
+
+### Ex 1 (4 pts)
+There are 7 variables and 100 observations.
+
+- 2 points for correct number of variables
+
+- 2 points for correct number of observations
+
+### Ex 2 (5 pts)
+You could use the n argument to specify how many observations to return. 
+
+```{r help, eval=FALSE}
+head(my_data, n = 10)
+```
+
+- 3 points for identifying the correct argument
+
+- 2 points for using the head function with a specified n value.
+
+### Ex 3 (6 pts)
+The names of the variables in the dataset are "NC County", "Cherie Berry Percentage 2012", "Cherie Berry Votes 2012", "Population 2012", "Elevators 2012", "ElevatorsPerThousand", "Cherie_TV_2012".
+
+- 1 point for showing how they found the names
+ 
+- 5 points for having the correct names
+
+### Ex 4 (5 pts)
+"Population 2012" is a numeric data type. "NC County" is a charcter data type.
+
+- 1 point for showing work
+
+- 2 points each for correct data type
+
+### Ex 5 (10 pts)
+There are (410+29+15+26+36+50) 566 elevators in the first 6 counties in the dataset.
+
+- 5 points for using a function to see the first 6 counties in the dataset
+
+- 5 points for correctly using R to add the values for the number of elevators
+
+## Ex 6 (10 pts)
+Yes, there are counties where there are more than 4 elevators per thousand. There are 7 counties where this occurs.
+
+- 5 points for correctly creating the new variable
+
+- 5 points for correctly identifying the number of counties
