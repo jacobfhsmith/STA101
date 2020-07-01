@@ -28,5 +28,5 @@ The first lab will be due on Wednesday July 1 and the first problem set will be 
    <br><br>
    Jacob's tentative office hours are M 4:30-5:30 PM, W 2-4 PM, Thursday 11AM-12 PM. <br>
    Daniel's tentative office hours are M 6-7PM, TH 7-8:30 PM, F 6-7:30 PM <br>
-   Meredith's tentative office hours are T 2-4 PM, W 10-12 AM
+   Meredith's tentative office hours are T 2-4 PM, W 10AM-12 PM
    
