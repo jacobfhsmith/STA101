@@ -372,7 +372,19 @@ summary {
 <p>In this lab, you will learn how to use appropriate visualizations to illustrate your points, as in “A picture is worth a thousand words.” We will mainly focus on ggplot2.</p>
 <div id="create-reproducible-lab-report" class="section level2">
 <h2>Create reproducible lab report</h2>
-<p>Reproducibility is important in scientific research, since others might want to verify your report. Use Rmarkdown to create reproducible reports. Go to file, new file, R Markdown to create your own .Rmd file.</p>
+<p>Reproducibility is important in scientific research, since others might want to verify your report. Use Rmarkdown to create reproducible reports.</p><br><br>
+
+ <pre class="r"><code>lTo help get you started we are providing a template for you. Use the following code to download this template:
+  download.file("https://jacobfhsmith.github.io/STA101/lab2.Rmd", destfile="sta101_lab2.Rmd")</code></pre>
+  
+<p> You will see a new file called lab2.Rmd in the Files tab on the pane in the bottom right corner of your RStudio window. Click on the file name to open the file.
+  All you need to do to complete the lab is to type up your brief answers and the R code (when necessary) in the spaces provided in the document. 
+  Earlier in the lab spaces are provided for you to enter R code chunks. Later in the lab you’ll need to figure out whether code is needed to answer a particular question,
+  and if so a new chunk can be inserted by clicking on the Insert Chunk button (dropdown menu under Chunks on the upper right corner of your markdown document).</p><br>
+
+<p>Make sure to add your name at the top of the file. If you click Knit to HTML, you’ll see your document in a new pop-up window; if you click Knit to Word , then you
+  can turn the file into a Word document.</p>
+ 
 </div>
 <div id="load-and-view-data" class="section level2">
 <h2>Load and view data</h2>
@@ -423,7 +435,7 @@ head(iris)</code></pre>
 <p>read.csv() function is used to read in .csv files</p>
 <pre class="r"><code>library(readxl)
 Elevator_Data  = read_excel(&quot;../Data/Elevator Data for Day 1.xlsx&quot;)</code></pre>
-<p>Use read_excel() function from readxl package to read in excel datasets.</p>
+<p>Use the read_excel() function from readxl package to read in excel datasets.</p>
 <p>Note: you put either the relative directory or the absolute directory in both functions. Refer to <a href="https://en.wikipedia.org/wiki/Directory_(computing)" class="uri">https://en.wikipedia.org/wiki/Directory_(computing)</a>.</p>
 <p>To find the directory of your files, see <a href="https://osxdaily.com/2013/06/19/copy-file-folder-path-mac-os-x/" class="uri">https://osxdaily.com/2013/06/19/copy-file-folder-path-mac-os-x/</a> if you use Mac or <a href="https://www.wikihow.com/Find-a-File%27s-Path-on-Windows" class="uri">https://www.wikihow.com/Find-a-File%27s-Path-on-Windows</a> if you use Windows.</p>
 </div>
