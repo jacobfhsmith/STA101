@@ -1,0 +1,157 @@
+---
+title: "A Few Other Things for Running Regressions In R"
+output:
+  html_document:
+    highlight: pygments
+    theme: cerulean
+    toc: true
+    toc_float: true
+---
+
+## Lab Report Template
+Your reproducible lab report: Before you get started, download the R Markdown template for this lab. Remember all of your code and answers go in this document:
+```{r}
+download.file("https://jacobfhsmith.github.io/STA101LFall2020/sta101_lab9.Rmd", destfile="sta101_lab9.Rmd")
+```
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(readxl)
+library(effects)
+```
+
+This week, you should focus on projects, but I want to show you a few last commands in R that are useful for running regressions and then diagnosing if there are any potential problems. We've discussed many of these in class, but I wanted to give some examples here. 
+
+The data set we are using here includes variables relating to unionization and state economic and political factors in 2018. Much of the data comes from Laura Bucci's [data set](https://dataverse.unc.edu/dataset.xhtml?persistentId=doi:10.15139/S3/L95PUM), among other sources. If you want to use this data set for something outside this class, please consult with me about the exact sources for each variable.
+
+# Variables
+The variables in this dataset are as follows:
+
+- State Name
+- State Abbreviation
+- Percentage of People in the State in a Union in 2018
+- Percentage of State Population that was non-white in 2018
+- Percentage of State's Economy that was based in Manufacturing in 2018
+- Individual Average Disposable Income in 2018
+- State Minimum Wage in 2018
+- State Poverty Rate in 2018
+- State GDP in 2018
+- Median Age in 2018
+- Percentage of People in the State with a High School Degree in 2018
+- Percentage of People in the State with a College Degree in 2018
+- Unemployment in 2018
+- Dummy variable for whether the state has a [right-to-work law](https://en.wikipedia.org/wiki/Right-to-work_law).
+- Percentage of the Vote Received by Donald Trump in 2018
+
+# Multiple Regression in R
+
+You want to predict a state's percentage union in 2018 and think that important factors include whether the state has a right-to-work law and how Republican leaning it is, based on the Trump 2016 vote. You also decide to control for percent manufacturing and percentage of people with a high school degree. In R, you can do that using the below code.
+
+First, you need to load your data into R.
+
+```{r multiple, echo=TRUE}
+#First, load the data
+UnionData<- read_excel("D:/USB20FD - Copy/STA101Summer2/StateUnionEconomicData.xlsx")
+
+#Then, you are ready to run the model
+UnionizationModel<- lm(UnionData$UnionMember~ UnionData$RTW+ UnionData$Trump2016 + UnionData$Manufacturing+ UnionData$HS)
+
+#Then, look at your model
+summary(UnionizationModel)
+```
+
+# Exercise 1 (15 points)
+What do you find after running the model? Please interpret the coefficients using the one-unit increase framework and then interpret the multiple R-squared. 
+
+# Multicollinearity in R
+
+After running a model, one of the first things you want to do is look for multicollinearity. When your independent variables correlate strongly with one another, it can wreak havoc on your model.
+
+One way to check for multicollinearity is by looking at the [variance inflation factor, or VIF](https://en.wikipedia.org/wiki/Variance_inflation_factor). 
+
+To do this, first you should load the car package.
+
+``` install.packages("car") ```
+
+Then, you are ready to test for multicollinearity. 
+
+```{r multicollinearity, echo=TRUE}
+library(car)
+car::vif(UnionizationModel)
+
+```
+
+# Exercise 2 (5 points)
+
+Do our VIFs here meet the level we discussed in class (> 10, although this is not a set standard) to worry about multicollinearity? Why do you think this is the case?
+
+# Plotting for Normality
+
+After running a model, you will want to look for normality in the residuals. You can do this by either looking at a historgram or a scatterplot of the absolute residuals plotted against the dependent variable.
+
+First, we make the histogram. Do the residuals appear to be normal?
+```{r histogram, echo=TRUE}
+unionresid<-resid(UnionizationModel)
+hist(unionresid, xlab=
+       "Unionization Residuals", ylab="Count", main=
+       "Residuals Histogram")
+```
+
+Then, make a scatter plot of the absolute residuals and the dependent variable and include a line of best fit. Does there appear to be a trend?
+```{r scatter, echo=TRUE}
+absresid<-abs(unionresid)
+plot(UnionData$UnionMember, absresid, xlab=
+       "Percent Unionized", ylab="Residuals", main=
+       "Absolute Residuals Plot")
+box()
+abline(lm(absresid~UnionData$UnionMember))
+```
+
+# Exercise 3 (30 points)
+On your own, run a model with a  different dependent variable and at least two independent variables. Find the VIF and plot the residuals. Please interpret the output.
+
+# Logistic Regression in R
+
+In class on next week, we will discuss another type of regression: logistic regression. Logistic regression is a common type of regression used with dichotomous dependent variables (i.e., dummy variables). (If you have a dichotomous dependent variable in your paper, it is okay if you are using an OLS, but it might be a good idea to also fit it as a logit and make a note of whether your results changed.)
+
+We want to predict if a state had a right-to-work law and we think that its political leanings (in terms of Trump vote) and its percent manufacturing were most important at predicting whether it had such a law. We also want to control for education and race.
+
+You can make logistic regression with the [glm](https://www.statmethods.net/advstats/glm.html) function. For a logit, the last part of the code you will write here is family=binomial. You would specify a different command here for other models, but you should copy this if you are running another logit.
+
+```{r logit, echo=FALSE}
+logit1<-glm(UnionData$RTW~ UnionData$Trump2016+ UnionData$Manufacturing+UnionData$HS + UnionData$Nonwhite ,family=binomial)
+
+summary(logit1)
+
+```
+
+As we will discuss in the last week of class, coefficients from logits cannot be interpreted the same way as for OLS regression models, but the output here still tells you the direction of the relationship and statistical significance. 
+
+# Predicted Probability Plots
+
+There are several ways to interpret the output of logistic regression models, but my personal preference are predicted probabilities. You can convert the logit coefficients (which are expressed in log odds) to predicted probabilities of "success" (i.e., the dependent variable is equal to 1) at various levels of the other variables. 
+
+Using the [effects](https://data.library.virginia.edu/visualizing-the-effects-of-logistic-regression/) package in R, you can plot predicted probabilities at various levels of the independent variables. Below I plot the predicted probability of a state being right-to-work as you go from the minimum value of an independent variable to the maximum value of that variable. Please note that for each prediction, the other variables are held at their mean value. 
+
+(Note: the tick marks on the bottom of each plot represent actual values of that variable. In some cases, you get a prediction for a value for a variable that does not actually exist in the data set. Beware of extrapolation.)
+
+```{r effects, echo=TRUE}
+logit1<-glm(RTW~ Trump2016+ Manufacturing+ HS + Nonwhite, data=UnionData ,family=binomial)
+
+plot(allEffects(logit1))
+```
+
+Notice here that the y-axis includes some unrealistic values and the labels are kind of scrunched and that there are plots for all four variables here. Using the selection command, you can pick which variable you would like to plot and using ylim, you can change the y-axis scale. Here, I plot the second variable (percent manufacturing) over a narrower scale.
+
+```{r plot2, echo=TRUE}
+plot(allEffects(logit1), selection=2, ylim = qlogis(c(.1,.9)), main="Manufacturing and Right-to-Work Laws")
+```
+
+There are no exercises you need to complete here for this lab, but I wanted to have this as a reference. If you want to try adding a variable and plotting, that would be a place to go if you have time.
+
+
+# Exercise 4 (50 points)
+
+What is one thing that you learned this semester about R that you find interesting, important, or relevant? Please discuss in a paragraph (five to eight sentences) and up to one graph. (Graph not required)
+
+
